@@ -1,15 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
-string Balance = "1000 EUR";
+float Balance = 1000;
 
 Console.WriteLine("What is your name? ");
 string userName = Console.ReadLine();
 Console.WriteLine("You are: " + userName);
 Console.WriteLine("");
-Console.WriteLine(userName + ", your balance is " + Balance);
+Console.WriteLine(userName + ", your balance is " + Balance + " EUR");
 
-Console.WriteLine("What do you want your new balance to be? ");
-string newBalance = Console.ReadLine() + " EUR";
-Console.WriteLine("Your new balance is " + newBalance);
+Console.WriteLine("How much money do you wish to withdraw? ");
+string sBalance = Console.ReadLine();
+float newBalance = float.Parse(sBalance);
+
+Console.WriteLine("Your new balance is " + (Balance - newBalance) + " EUR");
 
 
 
