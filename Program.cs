@@ -1,10 +1,10 @@
-﻿static float ReadFloat(string title)
+﻿static float ReadFloat(string responses)
 {
     // keep asking user...
     while (true)
     {
-        if (!string.IsNullOrWhiteSpace(title))
-            Console.WriteLine(title);
+        if (!string.IsNullOrWhiteSpace(responses))
+            Console.WriteLine(responses);
 
         if (!float.TryParse(Console.ReadLine(), out float result))
             Console.WriteLine("Syntax error. Please, try again.");
@@ -20,7 +20,7 @@
 Console.WriteLine("What is your name? ");
 string userName = Console.ReadLine();
 Console.WriteLine("You are: " + userName);
-Console.WriteLine("How much money do you have? ");
+Console.WriteLine("How much money do you have in the bank? ");
 string Balance = Console.ReadLine();
 
 float startBalance = float.Parse(Balance);
@@ -32,11 +32,11 @@ float startBalance = float.Parse(Balance);
     var choice = Console.ReadKey().Key;
     Console.ReadKey();
 
-    // balance change (either negative - withdraw or positive - deposit)
-    float delta =
-        choice == ConsoleKey.NumPad1 ? -ReadFloat("How much money do you wish to withdraw?")
-      : choice == ConsoleKey.NumPad2 ? ReadFloat("How much money do you wish to deposit?")
-      : 0f;
+// balance change (either negative - withdraw or positive - deposit)
+float delta =
+    choice == ConsoleKey.NumPad1 ? -ReadFloat("How much money do you wish to withdraw?")
+  : choice == ConsoleKey.NumPad2 ? ReadFloat("How much money do you wish to deposit?")
+  : 0f;
 
     if (delta != 0)
     {
@@ -44,8 +44,9 @@ float startBalance = float.Parse(Balance);
         Console.ReadLine();
         Environment.Exit(0);
     }
+
     else
-        Console.WriteLine("There was no choice for this number");
+        Console.WriteLine("There was no choice for this number, please take you credit card out of the ATM");
 
 
 
