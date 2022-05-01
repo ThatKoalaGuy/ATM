@@ -1,2 +1,2 @@
 # ATM
-A small personal project for learning C#
+A small personal project for learning C#.
